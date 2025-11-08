@@ -1,0 +1,77 @@
+/* reset.css */
+
+/* 1. Reset básico de márgenes, paddings y box-sizing */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Reset de tipografía */
+body,
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+dl, dt, dd,
+ul, ol, li,
+figure, figcaption {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+/* 3. Reset de listas */
+ul, ol {
+  list-style: none;
+}
+
+/* 4. Reset de enlaces */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 5. Reset de imágenes y medios */
+img, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 6. Reset de tablas */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 7. Reset de botones y inputs */
+button,
+input,
+select,
+textarea {
+  background: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+  outline: none;
+}
+
+/* 8. Reset de line-height y tipografía global */
+body {
+  line-height: 1;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 9. Reset de HTML5 elementos semánticos */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* 10. Scroll y contenedor global */
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}

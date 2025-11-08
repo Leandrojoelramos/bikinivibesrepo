@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* Aplicar la fuente globalmente */
+body {
+  font-family: 'Playfair Display', serif;
+  background: linear-gradient(135deg, #fff5b1 0%, #ffacf6 100%);
+}
+
+*,
+*::before,
+*::after {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Titulos */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: #20B2AA;
+}
+
+/* Texto general */
+p,
+span,
+a,
+li,
+strong,
+em,
+label,
+input,
+button,
+textarea {
+  color: #20B2AA;
+  font-family: 'Poppins', sans-serif; /* puedes cambiarla si querés */
+}
+
+/* Opcional: placeholder de inputs */
+::placeholder {
+  color: rgba(32, 178, 170, 0.7);
+}
+
+/* Si querés que los links cambien de color al pasar el mouse */
+a:hover {
+  color: #17a398;
+}
+
+/* Si usás fondos oscuros, podés mejorar el contraste */
+body {
+  color: #20B2AA;
+  background-color: transparent; /* o el color que uses */
+}
+
+button {
+  font-family: 'Playfair Display', serif;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* ocupa toda la altura visible */
+}
+
+/* Header fijo arriba */
+header {
+  flex-shrink: 0;
+}
+
+/* Main ocupa todo el espacio disponible entre header y footer */
+main {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+/* Footer fijo abajo */
+footer {
+  flex-shrink: 0;
+}
+
+.header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.bg-Footer {
+  background-color: rgba(255, 255, 255, 0.651);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Aseguramos que el contenido debajo no quede tapado */
+body {
+  padding-top: 80px;
+  /* ajustá según la altura real del header */
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  color: #20B2AA;
+  /* o el color que quieras */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-btn:hover {
+  color: #00ffb3;
+  /* un dorado suave al pasar el mouse */
+}
+
+h3,
+h5 {
+  margin: 0;
+}
