@@ -11,12 +11,19 @@ const Principal = () => {
   return (
     <div className="d-flex flex-column mt-5 align-items-center p-4">
       <h1 className="text-center mb-4">
-        Temporada de Bikinis{" "}
-        <LottieStatic id="burnCalories" style={animationHeartStyle} /> encontra
-        la tuya en BikinisVibes donde las Vibras del Verano son todo el año{" "}
-        <LottieStatic id="summerVibes" style={animationSunStyle} /> Colores,
-        Calidad, Talles y Precios económicos en un mismo lugar!{" "}
-        <LottieStatic id="loveLineArt" style={animationHeartsStyle} />
+        Temporada de Bikinis
+        <span className="d-inline-block align-middle mx-1">
+          <LottieStatic id="burnCalories" style={animationHeartStyle} />
+        </span>
+        encontra la tuya en BikinisVibes donde las Vibras del Verano son todo el
+        año
+        <span className="d-inline-block align-middle mx-1">
+          <LottieStatic id="summerVibes" style={animationSunStyle} />
+        </span>
+        Colores, Calidad, Talles y Precios económicos en un mismo lugar!
+        <span className="d-inline-block align-middle mx-1">
+          <LottieStatic id="loveLineArt" style={animationHeartsStyle} />
+        </span>
       </h1>
 
       <button
