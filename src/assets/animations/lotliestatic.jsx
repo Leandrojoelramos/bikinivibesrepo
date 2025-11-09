@@ -10,6 +10,7 @@ const useOnScreen = (options) => {
     const observer = new IntersectionObserver(([entry]) => {
       setVisible(entry.isIntersecting);
     }, options);
+
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, [options]);
@@ -20,14 +21,18 @@ const useOnScreen = (options) => {
 const LottieStatic = ({ id, style, loop = true }) => {
   const containerRef = useRef(null);
   const cache = useLottieCache();
-  const [ref, visible] = useOnScreen({ threshold: 0.1 });
+  const [ref] = useOnScreen({ threshold: 0.1 }); 
 
   useEffect(() => {
     if (!cache || !cache[id] || !containerRef.current) return;
+
     const cachedAnim = cache[id];
 
     if (cachedAnim.instance && cachedAnim.instance.isLoaded) {
-      containerRef.current.appendChild(cachedAnim.instance.wrapper);
+      if (!containerRef.current.contains(cachedAnim.instance.wrapper)) {
+        containerRef.current.appendChild(cachedAnim.instance.wrapper);
+      }
+      cachedAnim.instance.play();
       return;
     }
 
@@ -36,7 +41,7 @@ const LottieStatic = ({ id, style, loop = true }) => {
       animationData: cachedAnim.data,
       loop,
       autoplay: true,
-      renderer: "svg"
+      renderer: "svg", 
     });
 
     cachedAnim.instance = anim;
@@ -44,11 +49,10 @@ const LottieStatic = ({ id, style, loop = true }) => {
 
     return () => {
       if (cachedAnim.instance) {
-        cachedAnim.instance.destroy();
-        cachedAnim.instance = null;
+        cachedAnim.instance.pause();
       }
     };
-  }, [id, cache, loop, visible]);
+  }, [id, cache, loop]);
 
   return (
     <div
@@ -59,13 +63,14 @@ const LottieStatic = ({ id, style, loop = true }) => {
       style={{
         display: "inline-block",
         verticalAlign: "middle",
-        pointerEvents: "none",
+        pointerEvents: "none", 
         position: "relative",
         zIndex: 1,
-        ...style
+        ...style,
       }}
     />
   );
 };
 
 export default LottieStatic;
+
