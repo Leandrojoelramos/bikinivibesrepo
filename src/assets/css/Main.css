@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 /* Aplicar la fuente globalmente */
+html,
+body {
+  width: 100%;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Playfair Display', serif;
   background: linear-gradient(135deg, #fff5b1 0%, #ffacf6 100%);
@@ -36,7 +43,8 @@ input,
 button,
 textarea {
   color: #20B2AA;
-  font-family: 'Poppins', sans-serif; /* puedes cambiarla si querés */
+  font-family: 'Poppins', sans-serif;
+  /* puedes cambiarla si querés */
 }
 
 /* Opcional: placeholder de inputs */
@@ -52,7 +60,8 @@ a:hover {
 /* Si usás fondos oscuros, podés mejorar el contraste */
 body {
   color: #20B2AA;
-  background-color: transparent; /* o el color que uses */
+  background-color: transparent;
+  /* o el color que uses */
 }
 
 button {
